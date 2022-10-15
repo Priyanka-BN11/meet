@@ -1,12 +1,16 @@
 import React from 'react';
-import Events from './events';
+import EventList from './EventList';
+import CitySearch from './CitySearch';
 import './App.css';
+import NumberOfEvents from './NumberOfEvents';
 
 function App() {
   return (
     <div className="App">
       <h1>Meet app</h1>
-      <Events/>
+      <CitySearch/>
+      <EventList/>
+      <NumberOfEvents/>
     </div>
   );
 }
