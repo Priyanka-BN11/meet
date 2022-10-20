@@ -6,6 +6,8 @@ import './App.css';
 import { mockData } from "./mock-data";
 import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents} from './api';
+import 'bootstrap/dist/css/bootstrap.css';
+import {Container, Row,} from 'react-bootstrap';
 
 
 
@@ -37,12 +39,14 @@ class App extends Component {
   }
   render() {
   return (
+   
     <div className="App">
       <h1>Meet App</h1>
-   <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+      <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
       <NumberOfEvents />
-      <EventList events={this.state.events} size='6' sm='3'/>
+      <EventList events={this.state.events}/>
     </div>
+    
   );
 }
 }

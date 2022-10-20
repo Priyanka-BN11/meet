@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-
+import 'bootstrap/dist/css/bootstrap.css';
+import {Container, Row, Col, Button} from 'react-bootstrap';
 class Event extends Component {
     toggleEventDetails = () => {
         this.setState({ show: !this.state.show });
@@ -11,6 +12,8 @@ class Event extends Component {
           <>
     
             <div className="event">
+              <Row>
+                <Col xl={12}>
               <h1 className="event-summary-title">{event.summary}</h1>
               <p className="event-info">
                 {event.start.dateTime} {event.start.timeZone} {event.location}
@@ -30,20 +33,23 @@ class Event extends Component {
                 </>
               )}
               {!this.state.show ? (
-                <button
-                  className="event-showDetails-btn"
+                <Button
+                  className="event-showDetails-btn details-btn"
                   onClick={this.toggleEventDetails}
                 >
                   Show Details
-                </button>
+                </Button>
               ) : (
-                <button
-                  className="event-hideDetails-btn"
+                
+                <Button
+                  className="event-hideDetails-btn details-btn"
                   onClick={this.toggleEventDetails}
                 >
                   Hide Details
-                </button>
+                </Button>
               )}
+              </Col>
+              </Row>
             </div>
           </>
         );

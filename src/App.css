@@ -1,11 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
+body{
+  background-image: linear-gradient(to left,#FA709A,#FEE140);
+}
 .App {
   text-align: center;
   padding: 2% 5%;
+
 }
 
 .App * {
   box-sizing: border-box;
+  
 }
 
 ul {
@@ -80,9 +85,11 @@ input[type="number"] {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 4px;
   position: relative;
+  border-color: #494949;
+
 }
 
 .details-btn {
@@ -91,9 +98,18 @@ input[type="number"] {
   bottom: 5px;
   padding: 5px 8px;
   border-radius: 4px;
+  text-align: center;
   outline: none;
   cursor: pointer;
+ 
+  transition: all 0.5s;
+  
 }
+.details-btn:hover {
+  padding-right: 25px;
+  
+}
+
 
 .name {
   font-size: 18px;
