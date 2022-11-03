@@ -73,7 +73,11 @@ export const getEvents = async () => {
     NProgress.done();
     return mockData;
   }
-
+  if (!navigator.onLine) {
+    const data = localStorage.getItem("lastEvents");
+    NProgress.done();
+    return data ? JSON.parse(data).events:[];
+  }
 
   const token = await getAccessToken();
 
@@ -86,6 +90,7 @@ export const getEvents = async () => {
       localStorage.setItem("lastEvents", JSON.stringify(result.data));
       localStorage.setItem("locations", JSON.stringify(locations));
     }
+  
     NProgress.done();
     return result.data.events;
   }
