@@ -77,7 +77,7 @@ class App extends Component {
 
         const locationEvents = (location === 'all') ?
           events.slice(0, eventCount) : // Slice by eventCount, so that it is considered (atleast the default)
-          events.filter((event) => event.location === location);
+          events.filter((event) => event.location === location).slice(0, eventCount);
 
           this.setState({
             events: locationEvents,
@@ -104,7 +104,7 @@ class App extends Component {
           <h1>Meet App</h1>
           <OfflineAlert text={this.state.warningText} />
           <h4>Choose your nearest city</h4>
-          <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+          <CitySearch locations={locations} updateEvents={this.updateEvents} />
           <NumberOfEvents updateEvents={this.updateEvents} 
             numOfEvents={numberOfEvents}/>
           <h4>Events in each city</h4>
